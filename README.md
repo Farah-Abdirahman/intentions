@@ -4,7 +4,6 @@
 
 **Intentions** is a lightweight, open format for giving AI agents **purpose context** — a declared reason for the conversation that shapes how the agent behaves from the first response.
 
-Inspired by [Agent Skills](https://agentskills.io), Intentions follows the same folder-based, markdown-first philosophy: simple to write, easy to share, works across any agent that supports the format.
 
 ---
 
