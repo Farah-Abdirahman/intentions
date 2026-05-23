@@ -15,7 +15,8 @@ output:
   tone: casual
 drift_signals:
   - user lands on a clear direction and wants to act on it
-  - "okay let's do this" / "let's go with X"
+  - "okay let's do this"
+  - "let's go with X"
   - conversation converges on a decision
   - user introduces a concrete deadline or deliverable
 ---

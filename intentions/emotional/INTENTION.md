@@ -17,7 +17,7 @@ drift_signals:
   - user explicitly asks for advice or a solution
   - conversation shifts from feeling to doing
   - user introduces a concrete task or deadline
-  - "what should I do" / "how do I fix this"
+  - "what should I do" 
 ---
 
 # Emotional

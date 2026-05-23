@@ -157,6 +157,38 @@ See the [full specification](./spec/INTENTION_SPEC.md) for all available fields.
 
 ---
 
+## Demo — See It In Action
+
+The demo script runs the same message through Claude twice — once without any intention, once with an `INTENTION.md` loaded — and shows the responses side by side in the terminal.
+
+```bash
+# Clone the repo
+git clone https://github.com/YOUR_USERNAME/intentions.git
+cd intentions
+
+# Install dependencies
+pip install boto3 pyyaml rich
+
+# Set your API key
+export AWS_ACCESS_KEY_ID=your_access_key
+export AWS_SECRET_ACCESS_KEY=your_secret_key
+export AWS_REGION=us-east-1
+export BEDROCK_MODEL_ID=anthropic.claude-sonnet-4-5-20251001
+
+# Run interactively — pick an intention, type a message
+python demo/demo.py
+
+# Or specify directly
+python demo/demo.py --intention emotional --message "I've been really struggling lately and I don't know why"
+python demo/demo.py --intention executional --message "Write me a Python function to parse a CSV file"
+python demo/demo.py --intention exploratory --message "I want to start something on the side but have no idea what"
+python demo/demo.py --intention decisional --message "Should I learn React or Vue for my first frontend project?"
+```
+
+The difference in response quality is the proof.
+
+---
+
 ## Contributing
 
 Intentions is open to contributions from anyone. The best way to contribute is to share an intention that solves a real, recurring use case.
@@ -191,3 +223,37 @@ The feature concept, the four intention types, the three-field template, drift d
 ---
 
 *Intentions — open format — Apache 2.0*
+
+---
+
+## Installation
+
+### Claude Code
+
+Register the intentions repo as a plugin:
+
+```bash
+/plugin marketplace add YOUR_USERNAME/intentions
+```
+
+Then install:
+
+```bash
+/plugin install intentions
+```
+
+Use in any conversation:
+
+```bash
+/load-intention exploratory
+/load-intention executional short bullets direct "shipping a feature today"
+/load-intention emotional
+```
+
+Or just start talking — Claude will auto-detect context and activate the right intention mode.
+
+### Claude.ai (browser)
+
+Copy the contents of any `skills/[type]/SKILL.md` into your **Custom Instructions** under Settings. This anchors every conversation to that intention by default.
+
+To switch intentions, update your custom instructions before starting a new conversation.
